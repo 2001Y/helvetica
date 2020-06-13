@@ -71,17 +71,48 @@ p
   .pen
     transform:rotate(20deg);
     bottom: 3%;
+  #black
+    opacity: 1;
+#one-body,#four-body
   #white
     right: 45%;
   #red
     right: 30%
   #black
     right: 15%;
-    opacity: 1;
+#two-body
+  #black
+    right: 45%;
+    transform:rotate(380deg);
+  #red
+    right: 30%
+  #white
+    right: 15%;
+#three-body
+  #red
+    right: 45%;
+  #black
+    right: 30%
+  #white
+    right: 15%;
+#four-body
+  #white
+    right: 45%;
+    transform:rotate(380deg);
+  #red
+    right: 30%
+  #black
+    right: 15%;
 
 @media (max-width: 600px)
-  body:after
-    border: solid #000 3vw;
+  br:not(.br)
+    display none
+  body
+    font-size max(.3vw,11px) !important
+    word-wrap : break-word;
+    overflow-wrap : break-word;
+    &:after
+      border: solid #000 3vw;
   h1,h4
     font-size: 12vw;
   h2
@@ -104,7 +135,7 @@ p
   #one-body,#two-body,#three-body,#four-body
     padding-right 20%
     .pen
-      transform: rotate(0);
+      transform: rotate(0) !important
       right: 2% !important;
       bottom: -1%;
       height: 100%;
