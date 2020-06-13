@@ -1,0 +1,122 @@
+*
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+body
+  transition background 1s,color 1s
+  &:after
+    content: "";
+    width: 100vw;
+    height: 100vh;
+    border: solid #000 1.5vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    z-index -9
+header,section,footer
+  scroll-snap-align: start;
+  height: 100vh;
+  padding: 6.5vw;
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+header,footer
+  justify-content: flex-end;
+h1,h4
+  span
+    font-size: .3em;
+    margin-left .2em
+    display: block;
+h1,h4
+  font-size: 8vw;
+  line-height: .6em;
+  z-index: 99;
+h2
+  font-size: 4vw;
+  line-height: 1.1em;
+ul
+  list-style: none;
+  display: flex;
+li
+  margin-right: 1rem;
+p
+  opacity: .5;
+
+.pen
+  height: 90%;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+  transition: 1s;
+  filter: drop-shadow(1vh 1vh 1vh rgba(0,0,0,.2));
+#white
+  transform:rotate(25deg);
+  right: 40%;
+  bottom: 8%
+#red
+  transform:rotate(-30deg);
+  right: 50%
+#black
+  opacity: 0;
+  right: -10%;
+  bottom: 10%
+
+#one-body
+  background: #000;
+  color: #FFF;
+#one-body,#two-body,#three-body,#four-body
+  .pen
+    transform:rotate(20deg);
+    bottom: 3%;
+  #white
+    right: 45%;
+  #red
+    right: 30%
+  #black
+    right: 15%;
+    opacity: 1;
+
+@media (max-width: 600px)
+  body:after
+    border: solid #000 3vw;
+  h1,h4
+    font-size: 12vw;
+  h2
+    font-size: 8vw;
+    span
+      display none
+  header, section, footer
+    padding: 8vw;
+  #one
+    justify-content: flex-end;
+  #two h2
+    font-size: 10vw;
+  .pen
+    height: 85%
+  #white
+    right: 30%;
+    bottom: 11%;
+  #red
+    right: 45%;
+  #one-body,#two-body,#three-body,#four-body
+    padding-right 20%
+    .pen
+      transform: rotate(0);
+      right: 2% !important;
+      bottom: -1%;
+      height: 100%;
+  #one-body,#four-body
+    #black,#red
+      right: -30%;
+      opacity: 0;
+  #two-body
+    #black,#white
+      right: -30%;
+      opacity: 0;
+  #three-body
+    #red,#white
+      right: -30%;
+      opacity: 0;
