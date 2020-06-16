@@ -1,153 +1,199 @@
 *
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+  font-size inherit
+  font-family inherit
+  color inherit
+  margin 0
+  padding 0
+  border 0
+  box-sizing border-box
+  background-repeat no-repeat
+ol,ul
+  list-style-type none
+a
+  text-decoration none
+
 body
   transition background 1s,color 1s
   &:after
-    content: "";
-    width: 100vw;
-    height: 100vh;
-    border: solid #000 1.5vw;
-    position: fixed;
-    top: 0;
-    left: 0;
-    box-sizing: border-box;
-    z-index -9
+    content ""
+    width 100vw
+    height 100vh
+    border solid #000 1.5vw
+    transition border 1s
+    position fixed
+    top 0
+    left 0
+    box-sizing border-box
+    z-index 9999
 header,section,footer
-  scroll-snap-align: start;
-  height: 100vh;
-  padding: 6.5vw;
-  position: relative;
-  display: flex;
-  flex-flow: column;
-  justify-content: space-between;
+  scroll-snap-align start
+  height 100vh
+  padding 6.5vw
+  position relative
+  display flex
+  flex-flow column
+  justify-content space-between
 header,footer
-  justify-content: flex-end;
+  justify-content flex-end
 h1,h4
   span
-    font-size: .3em;
+    font-size .3em
     margin-left .2em
-    display: block;
+    display block
 h1,h4
-  font-size: 8vw;
-  line-height: .6em;
-  z-index: 99;
+  font-size 8vw
+  line-height .6em
+  z-index 99
 h2
-  font-size: 4vw;
-  line-height: 1.1em;
+  font-size 4vw
+  line-height 1.1em
+section:not(#one) h2:first-letter
+    color #BF2126
 ul
-  list-style: none;
-  display: flex;
+  list-style none
+  display flex
+footer ul
+  margin-left .4rem
 li
-  margin-right: 1rem;
+  margin-right 1em
+  img
+    width 10vw
 p
-  opacity: .5;
+  opacity .5
+  margin-top .5rem
 
 .pen
-  height: 90%;
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  z-index: 9;
-  transition: 1s;
-  filter: drop-shadow(1vh 1vh 1vh rgba(0,0,0,.2));
+  height 90%
+  position fixed
+  right 0
+  bottom 0
+  z-index 9
+  transition 1s
+  filter drop-shadow(1vh 1vh 1vh rgba(0,0,0,.2))
 #white
-  transform:rotate(25deg);
-  right: 40%;
-  bottom: 8%
+  z-index 2
+#skeleton
+  z-index 1
+#white,#skeleton
+  transform rotate(25deg)
+  right 40%
+  bottom 8%
+  &after
+    content ""
+    background url(skeleton.png) top right / 100% 100%
+    position absolute
+    top 0
+    left 0
 #red
-  transform:rotate(-30deg);
-  right: 50%
+  transform rotate(-30deg)
+  right 50%
 #black
-  opacity: 0;
-  right: -10%;
-  bottom: 10%
+  opacity 0
+  right -10%
+  bottom 10%
 
 #one-body
-  background: #000;
-  color: #FFF;
+  background #000
+  color #FFF
+  &:after
+    border solid #fff 1.5vw
 #one-body,#two-body,#three-body,#four-body
   .pen
-    transform:rotate(20deg);
-    bottom: 3%;
+    transform rotate(20deg)
+    bottom 3%
   #black
-    opacity: 1;
-#one-body,#four-body
-  #white
-    right: 45%;
+    opacity 1
+#one-body
+  #white,#skeleton
+    right 45%
+  #skeleton
+    transition 0
   #red
-    right: 30%
+    right 30%
   #black
-    right: 15%;
+    right 15%
 #two-body
-  #black
-    right: 45%;
-    transform:rotate(380deg);
   #red
-    right: 30%
-  #white
-    right: 15%;
+    right 15%
+  #white,#skeleton
+    right 45%
+  #black
+    right 30%
 #three-body
-  #red
-    right: 45%;
-  #black
-    right: 30%
+  #white,#skeleton
+    right 30%
   #white
-    right: 15%;
+    transform translate(-130%,50%) rotate(380deg)
+  #black,#red
+    opacity 0
+    right -10%
+    bottom 10%
 #four-body
+  #skeleton
+    bottom -50%
+    right 0
+    height 200vh 
+    transform rotate(90deg)
   #white
-    right: 45%;
-    transform:rotate(380deg);
-  #red
-    right: 30%
-  #black
-    right: 15%;
+    transform translate(-130%,50%) rotate(380deg)
+  #black,#red
+    opacity 0
+    right -10%
+    bottom 10%
 
-@media (max-width: 600px)
+@media (max-width 600px)
   br:not(.br)
     display none
   body
     font-size max(.3vw,11px) !important
-    word-wrap : break-word;
-    overflow-wrap : break-word;
+    word-wrap  break-word
+    overflow-wrap  break-word
     &:after
-      border: solid #000 3vw;
+      border solid #000 3vw
   h1,h4
-    font-size: 12vw;
+    font-size 12vw
   h2
-    font-size: 8vw;
+    font-size 8vw
     span
       display none
-  header, section, footer
-    padding: 8vw;
+  header,section,footer
+    padding 8vw
   #one
-    justify-content: flex-end;
+    justify-content flex-end
   #two h2
-    font-size: 10vw;
+    font-size 10vw
   .pen
-    height: 85%
-  #white
-    right: 30%;
-    bottom: 11%;
+    height 85%
+  #white,#skeleton
+    right 30%
+    bottom 11%
   #red
-    right: 45%;
+    right 45%
   #one-body,#two-body,#three-body,#four-body
     padding-right 20%
     .pen
-      transform: rotate(0) !important
-      right: 2% !important;
-      bottom: -1%;
-      height: 100%;
+      transform:rotate(0) !important;
+      right 2% !important
+      bottom -1% !important
+      height 100% !important
   #one-body,#four-body
     #black,#red
-      right: -30%;
-      opacity: 0;
+      right -30%
+      opacity 0
   #two-body
-    #black,#white
-      right: -30%;
-      opacity: 0;
+    #black,#white,#skeleton
+      right -30%
+      opacity 0
   #three-body
-    #red,#white
-      right: -30%;
-      opacity: 0;
+    #white
+      transition transform 1s .5s
+      transform translateY(50%) !important
+    #red
+      right -30%
+      opacity 0
+  #four-body
+    #white
+      transition transform 1s
+      transform translateY(50%) !important
+    #skeleton
+        transform:rotate(90deg) !important;
