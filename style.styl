@@ -71,6 +71,10 @@ p
   transition 1s
   will-change: transform;
   filter drop-shadow(1vh 1vh 1vh rgba(0,0,0,.2))
+  transform: translate3d(0, 0, 0);
+  -webkit-overflow-scrolling: touch
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 #white
   z-index 2
 #skeleton
@@ -132,7 +136,7 @@ p
 #four-body
   #skeleton
     bottom -50%
-    right 20%
+    right 0%
     height 200vh 
     transform rotate(90deg)
   #white
